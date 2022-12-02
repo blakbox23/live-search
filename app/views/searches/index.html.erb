@@ -1,0 +1,9 @@
+
+<% @searches.each do |search| %>
+    <ul>
+      <li>You have searched <%= search[0] %> <%= search[1]%> times </li>
+    </ul>
+    
+    <% end %>
+    
+    <%= link_to 'The players_path ', players_path %>

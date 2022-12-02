@@ -1,6 +1,11 @@
 <p style="color: green"><%= notice %></p>
 
+
+<%= link_to "Trending searches", searches_path %>
+
 <h1>Players</h1>
+
+
 
 <%= form_with(url: players_path, method: "GET", data: { controller: "form-submission", turbo_frame: "players", turbo_action: "advance" }) do |form| %>
   <%= form.label :query, "Search by name:" %>

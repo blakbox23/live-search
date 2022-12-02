@@ -5,7 +5,7 @@ class PlayersController < ApplicationController
   def index
     if params[:query].present?
       @players = Player.where("name like ?", "%#{params[:query]}%")
-      puts params[:query]
+      current_user.searches.create(name:params[:query])
     else
       @players = Player.all
     end
