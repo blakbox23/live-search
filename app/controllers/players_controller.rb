@@ -5,7 +5,15 @@ class PlayersController < ApplicationController
   def index
     if params[:query].present?
       @players = Player.where("name like ?", "%#{params[:query]}%")
-      current_user.searches.create(name:params[:query])
+
+      if Search.exists?(name: params[:query])
+        searched = Search.find_by(name: params[:query])
+        sum = searched.search_count.to_i + 1
+        searched.update(search_count: sum)
+      else
+        current_user.searches.create(name:params[:query])
+      end
+
     else
       @players = Player.all
     end
@@ -65,7 +73,7 @@ class PlayersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_player
-      @player = Player.find(params[:id])
+      @player = Player.find(params[:id]) 
     end
 
     # Only allow a list of trusted parameters through.

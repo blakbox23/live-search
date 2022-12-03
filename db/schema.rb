@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_02_190025) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_02_221916) do
   create_table "players", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -22,6 +22,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_02_190025) do
     t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "search_count", default: 1
     t.index ["user_id"], name: "index_searches_on_user_id"
   end
 

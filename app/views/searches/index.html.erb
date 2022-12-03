@@ -1,7 +1,7 @@
 
 <% @searches.each do |search| %>
     <ul>
-      <li>You have searched <%= search[0] %> <%= search[1]%> times </li>
+      <li><%= search.name %> <%= search.search_count %> times  </li>
     </ul>
     
     <% end %>

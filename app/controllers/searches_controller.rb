@@ -1,6 +1,7 @@
 class SearchesController < ApplicationController
     def index
-        @searches = Search.group("name").count
+        @searches = Search.all
+        @oldcount =Search.group("name").count
     end  
     def new
         @search = Search.new
