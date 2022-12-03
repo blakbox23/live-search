@@ -5,7 +5,15 @@ class ArticlesController < ApplicationController
   def index
     if params[:query].present?
       @articles = Article.where("name like ?", "%#{params[:query]}%")
-      current_user.searches.create(name:params[:query])
+
+      if Search.exists?(name: params[:query])
+        searched = Search.find_by(name: params[:query])
+        sum = searched.search_count.to_i + 1
+        searched.update(search_count: sum)
+      else
+        current_user.searches.create(name:params[:query])
+      end
+
     else
       @articles = Article.all
     end
