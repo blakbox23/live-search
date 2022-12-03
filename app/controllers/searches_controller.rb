@@ -13,10 +13,10 @@ class SearchesController < ApplicationController
         
       
         if @search.save
-          redirect_to players_path
+          redirect_to articles_path
         else
           flash[:error] = @search.errors.full_messages
-          redirect_to players_path
+          redirect_to articles_path
         end  
     end  
     

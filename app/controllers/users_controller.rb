@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   end  
   def create
     @user = User.create(user_params)
-    redirect_to players_path
+    redirect_to articles_path
   end  
   def show
     @user = User.find(params[:id])
