@@ -1,7 +1,6 @@
 class SearchesController < ApplicationController
     def index
-        @searches = Search.all
-        @oldcount =Search.group("name").count
+        @searches = Search.where("search_count > 0").order('search_count DESC')
     end  
     def new
         @search = Search.new

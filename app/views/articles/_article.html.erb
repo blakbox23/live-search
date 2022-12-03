@@ -1,7 +1,8 @@
-<div id="<%= dom_id article %>">
-  <p>
-    <strong>Name:</strong>
-    <%= article.name %>  <%= link_to "View Article", article_path(article) %>
-  </p>
+<div class="border w-25 m-4 p-3" id="<%= dom_id article %>">
+  <div class="text-align-center">
+    <p> <strong><%= article.name %></strong></p>
+    <p class="text-truncate-3"> <%= article.body %> </p>
+    <p> <%= link_to "View Article", article_path(article) %> </p>
+  </div>
 
 </div>

@@ -21,6 +21,7 @@ class ArticlesController < ApplicationController
 
   # GET /players/1 or /players/1.json
   def show
+    @article = Article.find(params[:id])
   end
 
   # GET /players/new
@@ -78,6 +79,6 @@ class ArticlesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def article_params
-      params.require(:article).permit(:name)
+      params.require(:article).permit(:name, :body)
     end
 end

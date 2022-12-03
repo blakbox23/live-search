@@ -1,9 +1,15 @@
+<div class="d-flex border container justify-content-between mb-3 align-items-center">
+<h1 class="fs-4">Trending</h1>
+<%= link_to "Back home", articles_path, class: "text-decoration-none" %>
+</div>
 
 <% @searches.each do |search| %>
-    <ul>
-      <li><%= search.name %> <%= search.search_count %> times  </li>
+    <ul class="w-50 mx-auto">
+      <li class="d-flex"><div class="border w-50 p-3"><%= search.name %></div>  <div class="border w-50 p-3"><%= search.search_count %></div> </li>
     </ul>
+
+    
     
     <% end %>
     
-    <%= link_to 'The articles_path ', articles_path %>
+    

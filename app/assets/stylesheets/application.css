@@ -13,3 +13,20 @@
  *= require_tree .
  *= require_self
  */
+
+ .flash-cls {
+    margin-bottom: 0;
+    display: block;
+    top: 0;
+    right: 0;
+    width: 100%;
+    opacity: 0.78;
+  }
+
+  .text-truncate-3 {
+    -webkit-line-clamp: 3;
+    overflow : hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
