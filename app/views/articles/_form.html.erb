@@ -1,10 +1,10 @@
-<%= form_with(model: player) do |form| %>
-  <% if player.errors.any? %>
+<%= form_with(model: article) do |form| %>
+  <% if article.errors.any? %>
     <div style="color: red">
-      <h2><%= pluralize(player.errors.count, "error") %> prohibited this player from being saved:</h2>
+      <h2><%= pluralize(article.errors.count, "error") %> prohibited this article from being saved:</h2>
 
       <ul>
-        <% player.errors.each do |error| %>
+        <% article.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
       </ul>

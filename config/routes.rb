@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "players#index"
-  resources :players
+  root to: "articles#index"
+  resources :articles
   resources :searches, only: [:index, :new, :create, :show]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
