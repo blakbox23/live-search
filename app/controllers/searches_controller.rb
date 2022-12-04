@@ -1,27 +1,6 @@
 class SearchesController < ApplicationController
   before_action :authenticate_user!
     def index
-        @searches = current_user.searches.where("search_count > 0").order('search_count DESC')
+        @searches = Search.current_user_trending(current_user)
     end  
-    def new
-        @search = Search.new
-    end  
-    def create
-
-        if params[:query].present?
-            @search = Search.new(params[:query])
-        end
-        
-      
-        if @search.save
-          redirect_to articles_path
-        else
-          flash[:error] = @search.errors.full_messages
-          redirect_to articles_path
-        end  
-    end  
-    
-    def show
-        redirect_to @search.sanitize
-      end
 end
