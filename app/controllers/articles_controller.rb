@@ -7,9 +7,13 @@ class ArticlesController < ApplicationController
 
       if Search.exists?(name: params[:query])
         Search.add_count(params[:query])
+        User.top_searched(current_user)
+
       else
         current_user.searches.create(name:params[:query])
+        User.top_searched(current_user)
       end
+
 
     else
       @articles = Article.all
