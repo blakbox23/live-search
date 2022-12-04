@@ -1,7 +1,6 @@
 class ArticlesController < ApplicationController
-  before_action :set_article, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!
 
-  # GET /players or /players.json
   def index
     if params[:query].present?
       @articles = Article.where("name like ?", "%#{params[:query]}%")
@@ -19,21 +18,15 @@ class ArticlesController < ApplicationController
     end
   end
 
-  # GET /players/1 or /players/1.json
   def show
     @article = Article.find(params[:id])
+
   end
 
-  # GET /players/new
   def new
     @article = Article.new
   end
 
-  # GET /players/1/edit
-  def edit
-  end
-
-  # POST /players or /players.json
   def create
     @article = Article.new(article_params)
 
@@ -48,7 +41,6 @@ class ArticlesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /players/1 or /players/1.json
   def update
     respond_to do |format|
       if @article.update(article_params)

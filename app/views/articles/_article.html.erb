@@ -2,7 +2,7 @@
   <div class="text-align-center">
     <p> <strong><%= article.name %></strong></p>
     <p class="text-truncate-3"> <%= article.body %> </p>
-    <p> <%= link_to "View Article", article_path(article) %> </p>
+    <p> <%= link_to "View Article", article_path(article), data: { turbo: false} %> </p>
   </div>
 
 </div>

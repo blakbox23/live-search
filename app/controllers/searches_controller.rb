@@ -1,6 +1,7 @@
 class SearchesController < ApplicationController
+  before_action :authenticate_user!
     def index
-        @searches = Search.where("search_count > 0").order('search_count DESC')
+        @searches = current_user.searches.where("search_count > 0").order('search_count DESC')
     end  
     def new
         @search = Search.new
