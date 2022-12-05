@@ -2,7 +2,7 @@ class Search < ApplicationRecord
   belongs_to :user
 
   def self.current_user_trending(user)
-    user.searches.where("search_count > 0").order('search_count DESC')
+    user.searches.where("search_count > 1").order('search_count DESC')
   end
 
   def self.add_count(phrase)
