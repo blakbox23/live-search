@@ -1,17 +1,17 @@
-<div class="d-flex border container justify-content-between mb-3 align-items-center">
+<div class="d-flex  container justify-content-between mb-3 align-items-center">
 <h1 class="fs-4">Articles</h1>
 <%= link_to "Trending searches", searches_path, class: "text-decoration-none" %>
 </div>
 
 
-<div class="d-flex border justify-content-center">
+<div class="d-flex  justify-content-center">
 <%= form_with(url: articles_path, method: "GET", data: { controller: "form-submission", turbo_frame: "articles", turbo_action: "advance" }) do |form| %>
   <%= form.label :query, "Search:" %>
   <%= form.text_field :query, data: { action: "input->form-submission#search" } %>
 <% end %>
 </div>
 
-<div class="container border">
+<div class="container ">
 <%= render "articles", articles: @articles %>
 </div>
 
