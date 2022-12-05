@@ -1,24 +1,21 @@
-# README
+# Live Search
+In this project, a user can perform live searches of articles, while their searches get recorded to display their most frequently searched phrases.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Built With
+- Ruby on Rails
 
-Things you may want to cover:
 
-* Ruby version
+## Live Demo
+[Live link](https://live-search.onrender.com/articles)
 
-* System dependencies
 
-* Configuration
+## Getting Started
+Clone this repository to get a copy of this project. 
+- Ensure the Gem files are also installed by running `bundle install`
+- To setup your the database, run `db:create`, followed by `db:migrate`
+- Finally to view the project, run `rails s`, and visit `http://localhost:3000` from your favourite browser.
 
-* Database creation
 
-* Database initialization
+## Author
+👤 **Peter Mbuthia**
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
