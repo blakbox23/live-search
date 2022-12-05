@@ -6,7 +6,7 @@ In this project, a user can perform live searches of articles, while their searc
 
 
 ## Live Demo
-[Live link](https://secret-atoll-58969.herokuapp.com/)
+[Live link](https://live-search.onrender.com/articles)
 
 
 ## Getting Started
