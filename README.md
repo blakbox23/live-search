@@ -6,7 +6,7 @@ In this project, a user can perform live searches of articles, while their searc
 
 
 ## Live Demo
-[Live link](https://live-search.onrender.com/articles)
+Removed
 
 
 ## Getting Started
